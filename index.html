@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ale Fretes | Transporte em Barrinha e Região</title>
+    <title>Ale Fretes | Fretes Leves em Barrinha e Região</title>
     <style>
         * {
             margin: 0;
@@ -39,6 +39,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo img {
@@ -50,6 +52,7 @@
             display: flex;
             list-style: none;
             gap: 30px;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
@@ -80,34 +83,40 @@
             background: #128C7E;
         }
 
-        /* Hero Section - Agora mais sutil para não competir com a imagem */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('carro1.png');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('carro1.png');
             background-size: cover;
             background-position: center;
-            height: 600px;
+            min-height: 500px;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
+            padding: 60px 0;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
             padding: 40px;
             border-radius: 10px;
         }
 
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
         .hero h2 {
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 400;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 30px;
         }
 
@@ -131,21 +140,21 @@
             background: #128C7E;
         }
 
-        /* Features */
+        /* Diferenciais */
         .features {
-            padding: 80px 0;
+            padding: 60px 0;
             background: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .section-title h3 {
-            font-size: 36px;
+            font-size: 32px;
             color: #1e3c72;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .section-title p {
@@ -155,77 +164,137 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .feature-card {
             background: #f8f9fa;
-            padding: 30px;
+            padding: 25px 15px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
         .feature-card h4 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: #1e3c72;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Sobre - Strada com capota */
+        .about {
+            padding: 60px 0;
+            background: #f4f7fc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .about-text ul {
+            list-style: none;
+        }
+
+        .about-text ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-text ul li span {
+            font-size: 20px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .badge {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         /* Serviços */
         .services {
-            padding: 80px 0;
-            background: #f4f7fc;
+            padding: 60px 0;
+            background: white;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .service-item {
-            background: white;
+            background: #f8f9fa;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .service-image {
-            height: 220px;
+            height: 160px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.5s;
-        }
-
-        .service-item:hover .service-image {
-            transform: scale(1.05);
         }
 
         .service-content {
-            padding: 25px;
+            padding: 20px;
         }
 
         .service-content h4 {
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 10px;
             color: #1e3c72;
         }
 
-        .btn-saiba-mais {
+        .service-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .btn-whatsapp-small {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: #25d366;
             color: white;
             text-decoration: none;
@@ -236,80 +305,151 @@
             text-align: center;
         }
 
-        .btn-saiba-mais:hover {
+        .btn-whatsapp-small:hover {
             background: #128C7E;
         }
 
-        /* Contato */
-        .contact {
-            padding: 80px 0;
-            background: white;
+        /* Como funciona */
+        .how-it-works {
+            padding: 60px 0;
+            background: #f4f7fc;
         }
 
-        .contact-info {
+        .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .contact-item {
-            padding: 30px;
-            background: #f8f9fa;
+        .step-card {
+            background: white;
+            padding: 30px 20px;
             border-radius: 10px;
-            transition: transform 0.3s;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .step-number {
+            background: #1e3c72;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: 700;
         }
 
-        .contact-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .contact-item h4 {
-            font-size: 20px;
+        .step-card h4 {
             margin-bottom: 10px;
             color: #1e3c72;
         }
 
-        .contact-item p {
+        .step-card p {
             color: #666;
-            line-height: 1.8;
+            font-size: 14px;
         }
 
-        .contact-item a {
-            color: #2a5298;
+        /* O que transportamos */
+        .what-we-carry {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .carry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .carry-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .carry-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .carry-item h4 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .carry-item p {
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Contato */
+        .contact {
+            padding: 60px 0;
+            background: #f4f7fc;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .contact-item {
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1e3c72;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #666;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 14px;
         }
 
         .contact-item a:hover {
-            color: #1e3c72;
-            text-decoration: underline;
+            color: #25d366;
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
             color: white;
-            padding: 50px 0 20px;
+            padding: 40px 0 20px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
             margin-bottom: 30px;
         }
 
         .footer-section h4 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #ffd700;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .footer-section ul {
@@ -317,75 +457,74 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .footer-section ul li a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 14px;
         }
 
         .footer-section ul li a:hover {
             color: #ffd700;
-            padding-left: 5px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid #333;
             color: #888;
+            font-size: 14px;
         }
 
         /* Responsividade */
+        @media (max-width: 992px) {
+            .features-grid,
+            .services-grid,
+            .steps-grid,
+            .carry-grid,
+            .contact-info,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 15px;
+                text-align: center;
             }
 
             nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
+                justify-content: center;
+            }
+
+            .features-grid,
+            .services-grid,
+            .steps-grid,
+            .carry-grid,
+            .contact-info,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
             }
 
             .hero h2 {
-                font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 16px;
+                font-size: 22px;
             }
 
             .hero-content {
                 padding: 20px;
             }
-
-            .section-title h3 {
-                font-size: 28px;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-        }
-
-        /* Animações */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .feature-card, .service-item, .contact-item {
-            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
@@ -393,13 +532,13 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="logo.png" alt="Logo Ale Fretes">
+                <img src="logo.png" alt="Ale Fretes">
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#features">Diferenciais</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -410,27 +549,25 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="container hero-content">
-            <h2>Transporte Rápido e Seguro para sua Mercadoria</h2>
-            <p>Soluções logísticas completas para fretes em Barrinha e toda região. Entregas rápidas, seguras e com o melhor preço do mercado.</p>
-            <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
-                <span>📱</span> Solicitar Cotação via WhatsApp
-            </a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ale Fretes</h1>
+                <h2>Fretes Leves em Barrinha e Região</h2>
+                <p>Strada com capota de fibra • Cargas leves • Atendimento térreo<br>Você coloca, a gente transporta!</p>
+                <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
+                    <span>📱</span> Solicitar Orçamento via WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <section id="diferenciais" class="features">
         <div class="container">
             <div class="section-title">
                 <h3>Nossos Diferenciais</h3>
                 <p>Por que escolher a Ale Fretes</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
-                    <h4>Frota Própria</h4>
-                    <p>Veículos modernos e bem equipados para garantir a segurança da sua carga.</p>
-                </div>
                 <div class="feature-card">
                     <div class="feature-icon">⏱️</div>
                     <h4>Entrega Rápida</h4>
@@ -447,9 +584,31 @@
                     <p>Especialistas em fretes em Barrinha e toda região.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
+                    <div class="feature-icon">📱</div>
                     <h4>Suporte via WhatsApp</h4>
                     <p>Atendimento personalizado e rápido pelo WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="badge">Nossa Frota</span>
+                    <h3>Fiat Strada com Capota de Fibra</h3>
+                    <ul>
+                        <li><span>✅</span> Ideal para cargas leves e secas</li>
+                        <li><span>✅</span> Capota de fibra - proteção contra chuva e sol</li>
+                        <li><span>✅</span> Veículo preservado e cuidado</li>
+                        <li><span>⚠️</span> Não realizamos subidas em apartamentos/sobrados</li>
+                        <li><span>⚠️</span> A carga deve ser colocada pelo contratante (térreo)</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 500;">"Você coloca, a gente transporta!"</p>
+                </div>
+                <div class="about-image">
+                    <img src="carro1.png" alt="Fiat Strada Ale Fretes">
                 </div>
             </div>
         </div>
@@ -458,16 +617,16 @@
     <section id="servicos" class="services">
         <div class="container">
             <div class="section-title">
-                <h3>Nossos Serviços</h3>
+                <h3>O Que Transportamos</h3>
                 <p>Solicite seu orçamento pelo WhatsApp</p>
             </div>
             <div class="services-grid">
                 <div class="service-item">
                     <div class="service-image" style="background-image: url('carro1.png')"></div>
                     <div class="service-content">
-                        <h4>Carga Fracionada</h4>
-                        <p>Ideal para pequenas e médias cargas. Compartilhe o espaço e pague apenas pelo que usar.</p>
-                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20fracionada." class="btn-saiba-mais" target="_blank">
+                        <h4>Caixas e Encomendas</h4>
+                        <p>Transporte de caixas, pacotes e encomendas para toda região.</p>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20transportar%20caixas%20e%20encomendas." class="btn-whatsapp-small" target="_blank">
                             📱 Solicitar via WhatsApp
                         </a>
                     </div>
@@ -475,9 +634,9 @@
                 <div class="service-item">
                     <div class="service-image" style="background-image: url('carro1.png')"></div>
                     <div class="service-content">
-                        <h4>Carga Completa</h4>
-                        <p>Para grandes volumes, temos veículos dedicados exclusivamente para sua carga.</p>
-                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20completa." class="btn-saiba-mais" target="_blank">
+                        <h4>Entregas de Comércio</h4>
+                        <p>Para lojas que precisam entregar produtos em Barrinha e região.</p>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20entregas%20de%20comércio." class="btn-whatsapp-small" target="_blank">
                             📱 Solicitar via WhatsApp
                         </a>
                     </div>
@@ -485,12 +644,74 @@
                 <div class="service-item">
                     <div class="service-image" style="background-image: url('carro1.png')"></div>
                     <div class="service-content">
-                        <h4>Mudanças</h4>
-                        <p>Transporte seguro para sua mudança residencial ou comercial.</p>
-                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20mudança." class="btn-saiba-mais" target="_blank">
+                        <h4>Pequenas Mudanças</h4>
+                        <p>Mudanças residenciais pequenas - tudo no térreo.</p>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pequena%20mudança." class="btn-whatsapp-small" target="_blank">
                             📱 Solicitar via WhatsApp
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-we-carry">
+        <div class="container">
+            <div class="section-title">
+                <h3>Também Transportamos</h3>
+                <p>Diversos tipos de carga leve</p>
+            </div>
+            <div class="carry-grid">
+                <div class="carry-item">
+                    <div class="carry-icon">📦</div>
+                    <h4>Mercadorias</h4>
+                    <p>Compras de mercado, atacado e lojas</p>
+                </div>
+                <div class="carry-item">
+                    <div class="carry-icon">🛋️</div>
+                    <h4>Móveis Pequenos</h4>
+                    <p>Mesas, cadeiras, racks, desmontados</p>
+                </div>
+                <div class="carry-item">
+                    <div class="carry-icon">📺</div>
+                    <h4>Eletros</h4>
+                    <p>TVs, microondas, ventiladores</p>
+                </div>
+                <div class="carry-item">
+                    <div class="carry-icon">📄</div>
+                    <h4>Documentos</h4>
+                    <p>Entregas de documentos e materiais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h3>Como Funciona</h3>
+                <p>Simples, rápido e transparente</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4>Mande WhatsApp</h4>
+                    <p>Envie foto do que precisa transportar e os endereços</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4>Receba o Orçamento</h4>
+                    <p>Respondemos rápido com o valor combinado</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4>Você Coloca</h4>
+                    <p>A carga deve estar no térreo para colocarmos no veículo</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4>Nós Entregamos</h4>
+                    <p>Transporte seguro até o destino combinado</p>
                 </div>
             </div>
         </div>
@@ -511,17 +732,17 @@
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <h4>WhatsApp</h4>
-                    <p><a href="https://wa.me/551698369275" target="_blank">(16) 98369-275</a><br>Atendimento rápido via WhatsApp</p>
+                    <p><a href="https://wa.me/551698369275" target="_blank">(16) 98369-275</a><br>Atendimento rápido</p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h4>E-mail</h4>
-                    <p><a href="mailto:contato@alefretes.com.br">contato@alefretes.com.br</a><br>Envie sua solicitação</p>
+                    <p><a href="mailto:contato@alefretes.com.br">contato@alefretes.com.br</a></p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">⏰</div>
                     <h4>Horário</h4>
-                    <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    <p>Seg a Sex: 8h às 18h<br>Sáb: 8h às 12h</p>
                 </div>
             </div>
         </div>
@@ -532,23 +753,23 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Ale Fretes</h4>
-                    <p>Sua solução completa em transporte de cargas e fretes em Barrinha e região. Compromisso com qualidade e pontualidade.</p>
+                    <p>Fretes leves em Barrinha e região com Fiat Strada capotada. Atendimento rápido e personalizado.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="#home">Início</a></li>
                         <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#features">Diferenciais</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20fracionada." target="_blank">Carga Fracionada</a></li>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20completa." target="_blank">Carga Completa</a></li>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20mudança." target="_blank">Mudanças</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20caixas%20e%20encomendas." target="_blank">Caixas e Encomendas</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20entregas%20de%20comércio." target="_blank">Entregas de Comércio</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pequena%20mudança." target="_blank">Pequenas Mudanças</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
