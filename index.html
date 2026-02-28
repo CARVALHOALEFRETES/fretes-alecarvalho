@@ -1,196 +1,666 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALE FRETES</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte & Fretes | Logística Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+        body {
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
 
-body{
-background:#0f172a;
-color:white;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.hero{
-background:url('carro1.jpg') center/cover no-repeat;
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-position:relative;
-}
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.65);
-}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.hero-content{
-position:relative;
-z-index:2;
-}
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
 
-.hero img{
-width:250px;
-margin-bottom:20px;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-.hero h1{
-font-size:50px;
-letter-spacing:2px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
 
-.hero p{
-margin-top:10px;
-font-size:20px;
-color:#ddd;
-}
+        nav ul li a:hover {
+            color: #ffd700;
+        }
 
-.botao{
-margin-top:30px;
-display:inline-block;
-padding:18px 40px;
-background:#25d366;
-color:white;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-border-radius:8px;
-transition:0.3s;
-}
+        .btn-contato {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-.botao:hover{
-background:#1ebe5d;
-}
+        .btn-contato:hover {
+            background: #ffed4a;
+            color: #1e3c72;
+        }
 
-section{
-padding:80px 20px;
-text-align:center;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('carro1.png');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
 
-h2{
-font-size:35px;
-margin-bottom:40px;
-color:#25d366;
-}
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.servicos{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-}
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
 
-.card{
-background:#1e293b;
-width:300px;
-padding:30px;
-border-radius:12px;
-transition:0.3s;
-}
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
 
-.card:hover{
-transform:translateY(-10px);
-background:#334155;
-}
+        .cta-button {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
 
-.card h3{
-margin-bottom:15px;
-color:#25d366;
-}
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+        }
 
-footer{
-background:black;
-padding:30px;
-text-align:center;
-color:#aaa;
-}
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
 
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-padding:18px 20px;
-border-radius:50%;
-font-size:24px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-@media(max-width:768px){
-.hero h1{
-font-size:32px;
-}
-.hero img{
-width:180px;
-}
-.servicos{
-flex-direction:column;
-align-items:center;
-}
-}
-</style>
+        .section-title h3 {
+            font-size: 36px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        /* Serviços */
+        .services {
+            padding: 80px 0;
+            background: #f4f7fc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+
+        .service-item:hover .service-image {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1e3c72;
+        }
+
+        .service-price {
+            font-size: 24px;
+            color: #2a5298;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .btn-saiba-mais {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #1e3c72;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-saiba-mais:hover {
+            background: #2a5298;
+        }
+
+        /* Cotação */
+        .quote {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .quote-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1e3c72;
+            outline: none;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background: #ffed4a;
+        }
+
+        /* Contato */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1e3c72;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: #ffd700;
+            font-size: 18px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffd700;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title h3 {
+                font-size: 28px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .service-item, .contact-item {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Logo RápidoFrete - Transporte e Logística">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#features">Diferenciais</a></li>
+                    <li><a href="#cotacao">Cotação</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#cotacao" class="btn-contato">Solicitar Cotação</a>
+        </div>
+    </header>
 
-<div class="hero">
-<div class="hero-content">
-<img src="logo.png" alt="Logo ALE FRETES">
-<h1>ALE FRETES</h1>
-<p>Pequenas mudanças • Mercadorias • Encomendas</p>
-<a href="https://wa.me/5516988369275" class="botao">
-Solicitar Orçamento no WhatsApp
-</a>
-</div>
-</div>
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h2>Transporte Rápido e Seguro para sua Mercadoria</h2>
+            <p>Soluções logísticas completas para fretes em todo território nacional. Entregas rápidas, seguras e com o melhor preço do mercado.</p>
+            <a href="#cotacao" class="cta-button">Solicitar Cotação Grátis</a>
+        </div>
+    </section>
 
-<section>
-<h2>Nossos Serviços</h2>
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h3>Por que escolher a RápidoFrete?</h3>
+                <p>Oferecemos o que há de melhor em transporte de cargas</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h4>Frota Própria</h4>
+                    <p>Veículos modernos e bem equipados para garantir a segurança da sua carga.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h4>Entrega Rápida</h4>
+                    <p>Compromisso com prazos e entregas no tempo combinado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h4>Seguro de Carga</h4>
+                    <p>Sua mercadoria protegida do início ao fim do trajeto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h4>Rastreamento</h4>
+                    <p>Acompanhe sua carga em tempo real pelo nosso sistema.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h4>Melhor Preço</h4>
+                    <p>Condições especiais e preços competitivos no mercado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h4>Suporte 24h</h4>
+                    <p>Atendimento personalizado a qualquer hora do dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="servicos">
-<div class="card">
-<h3>Pequenas Mudanças</h3>
-<p>Transporte seguro de móveis e eletrodomésticos.</p>
-</div>
+    <section id="servicos" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h3>Nossos Serviços</h3>
+                <p>Soluções personalizadas para cada tipo de carga</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="service-content">
+                        <h4>Carga Fracionada</h4>
+                        <p>Ideal para pequenas e médias cargas. Compartilhe o espaço e pague apenas pelo que usar.</p>
+                        <div class="service-price">A partir de R$ 150</div>
+                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="service-content">
+                        <h4>Carga Completa</h4>
+                        <p>Para grandes volumes, temos caminhões dedicados exclusivamente para sua carga.</p>
+                        <div class="service-price">A partir de R$ 1.200</div>
+                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="service-content">
+                        <h4>Cargas Especiais</h4>
+                        <p>Transporte de cargas sensíveis, perigosas ou que necessitam de cuidados especiais.</p>
+                        <div class="service-price">Sob consulta</div>
+                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Transporte de Mercadorias</h3>
-<p>Entrega rápida e responsável para empresas.</p>
-</div>
+    <section id="cotacao" class="quote">
+        <div class="container">
+            <div class="section-title" style="color: white;">
+                <h3 style="color: white;">Solicite sua Cotação</h3>
+                <p style="color: #ccc;">Preencha o formulário e receba o melhor preço para seu frete</p>
+            </div>
+            <div class="quote-form">
+                <form>
+                    <div class="form-group">
+                        <label>Nome completo</label>
+                        <input type="text" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="tel" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de carga</label>
+                        <select required>
+                            <option value="">Selecione...</option>
+                            <option value="fracionada">Carga Fracionada</option>
+                            <option value="completa">Carga Completa</option>
+                            <option value="especial">Carga Especial</option>
+                            <option value="documentos">Documentos/Encomendas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Origem</label>
+                        <input type="text" placeholder="Cidade de origem" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Destino</label>
+                        <input type="text" placeholder="Cidade de destino" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Peso aproximado (kg)</label>
+                        <input type="number" placeholder="Ex: 500" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição da carga</label>
+                        <textarea placeholder="Descreva sua carga e necessidades especiais..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Solicitar Cotação</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Entrega de Encomendas</h3>
-<p>Coleta e entrega ágil na cidade e região.</p>
-</div>
-</div>
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h3>Entre em Contato</h3>
+                <p>Estamos prontos para atender você</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h4>Endereço</h4>
+                    <p>Av. das Empresas, 1000<br>Centro Empresarial<br>São Paulo - SP</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h4>Telefone</h4>
+                    <p>(11) 3333-4444<br>(11) 99999-8888</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h4>E-mail</h4>
+                    <p>contato@rapidofrete.com.br<br>comercial@rapidofrete.com.br</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <h4>Horário</h4>
+                    <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
-
-<footer>
-<p>© 2026 ALE FRETES</p>
-<p>WhatsApp: (16) 98836-9275</p>
-</footer>
-
-<a href="https://wa.me/5516988369275" class="whatsapp-float">
-💬
-</a>
-
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RápidoFrete</h4>
+                    <p>Sua solução completa em transporte de cargas e fretes em todo Brasil. Compromisso com qualidade e pontualidade.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#features">Diferenciais</a></li>
+                        <li><a href="#cotacao">Cotação</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Carga Fracionada</a></li>
+                        <li><a href="#">Carga Completa</a></li>
+                        <li><a href="#">Cargas Especiais</a></li>
+                        <li><a href="#">Documentos</a></li>
+                        <li><a href="#">Mudanças</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 RápidoFrete. Todos os direitos reservados. | Desenvolvido por Sua Empresa</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
