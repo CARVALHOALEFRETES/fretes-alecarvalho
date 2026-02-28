@@ -83,76 +83,107 @@
             background: #128C7E;
         }
 
-        /* Hero Section */
+        /* Hero Section - Melhorado */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('carro1.png');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('carro1.png');
             background-size: cover;
             background-position: center;
-            min-height: 500px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             color: white;
             text-align: center;
             padding: 60px 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(0,0,0,0.6);
-            padding: 40px;
-            border-radius: 10px;
+            background: rgba(0,0,0,0.5);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 52px;
             margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero h2 {
             font-size: 28px;
             margin-bottom: 20px;
             font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 18px;
             margin-bottom: 30px;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero .destaque {
+            background: rgba(255,215,0,0.2);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-weight: 500;
         }
 
         .cta-button {
             background: #25d366;
             color: white;
-            padding: 15px 40px;
+            padding: 18px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 18px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 20px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             background: #128C7E;
+            border-color: rgba(255,255,255,0.3);
         }
 
         /* Diferenciais */
         .features {
-            padding: 60px 0;
+            padding: 80px 0;
             background: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .section-title h3 {
-            font-size: 32px;
+            font-size: 36px;
             color: #1e3c72;
             margin-bottom: 10px;
         }
@@ -165,16 +196,16 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .feature-card {
             background: #f8f9fa;
-            padding: 25px 15px;
-            border-radius: 10px;
+            padding: 30px 20px;
+            border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -182,16 +213,17 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
 
         .feature-card h4 {
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 10px;
             color: #1e3c72;
         }
@@ -201,23 +233,33 @@
             color: #666;
         }
 
-        /* Sobre - Strada com capota */
+        /* Sobre - Strada com capota - Melhorado */
         .about {
-            padding: 60px 0;
+            padding: 80px 0;
             background: #f4f7fc;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
         .about-text h3 {
-            font-size: 28px;
+            font-size: 32px;
             color: #1e3c72;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .about-text h3:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffd700;
+            margin-top: 10px;
         }
 
         .about-text ul {
@@ -225,62 +267,95 @@
         }
 
         .about-text ul li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            font-size: 18px;
         }
 
         .about-text ul li span {
-            font-size: 20px;
+            font-size: 24px;
+            background: #1e3c72;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image {
+            position: relative;
         }
 
         .about-image img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 3px solid #ffd700;
+            border-radius: 20px;
+            z-index: -1;
         }
 
         .badge {
             background: #ffd700;
             color: #1e3c72;
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            letter-spacing: 1px;
         }
 
         /* Serviços com ícones personalizados */
         .services {
-            padding: 60px 0;
+            padding: 80px 0;
             background: white;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
 
         .service-item {
             background: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px 20px;
+            border-radius: 15px;
+            padding: 40px 25px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         /* Ícone 1 - Bonequinho carregando caixa */
         .icon-caixa {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
             position: relative;
         }
         
@@ -291,58 +366,61 @@
         }
         
         .boneco-caixa .cabeca {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: #1e3c72;
             border-radius: 50%;
             position: absolute;
-            top: 5px;
-            left: 30px;
+            top: 10px;
+            left: 37px;
         }
         
         .boneco-caixa .corpo {
-            width: 16px;
-            height: 30px;
+            width: 20px;
+            height: 35px;
             background: #1e3c72;
             position: absolute;
-            top: 25px;
-            left: 32px;
+            top: 35px;
+            left: 40px;
         }
         
         .boneco-caixa .braco-esquerdo {
-            width: 20px;
-            height: 6px;
+            width: 25px;
+            height: 8px;
             background: #1e3c72;
             position: absolute;
-            top: 30px;
-            left: 20px;
+            top: 40px;
+            left: 25px;
             transform: rotate(20deg);
+            border-radius: 4px;
         }
         
         .boneco-caixa .braco-direito {
-            width: 20px;
-            height: 6px;
+            width: 25px;
+            height: 8px;
             background: #1e3c72;
             position: absolute;
-            top: 30px;
-            left: 40px;
+            top: 40px;
+            left: 50px;
             transform: rotate(-20deg);
+            border-radius: 4px;
         }
         
         .boneco-caixa .caixa {
-            width: 30px;
-            height: 25px;
+            width: 35px;
+            height: 30px;
             background: #ffd700;
-            border: 2px solid #1e3c72;
+            border: 3px solid #1e3c72;
             position: absolute;
-            top: 35px;
-            left: 45px;
+            top: 45px;
+            left: 55px;
+            border-radius: 5px;
         }
         
         .boneco-caixa .caixa:before {
             content: "";
-            width: 20px;
-            height: 2px;
+            width: 25px;
+            height: 3px;
             background: #1e3c72;
             position: absolute;
             top: 8px;
@@ -351,19 +429,19 @@
         
         .boneco-caixa .caixa:after {
             content: "";
-            width: 2px;
-            height: 15px;
+            width: 3px;
+            height: 18px;
             background: #1e3c72;
             position: absolute;
             top: 5px;
-            left: 12px;
+            left: 14px;
         }
 
         /* Ícone 2 - Boneco entregando no comércio */
         .icon-comercio {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
             position: relative;
         }
         
@@ -374,77 +452,81 @@
         }
         
         .boneco-comercio .cabeca {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: #2a5298;
             border-radius: 50%;
             position: absolute;
-            top: 5px;
-            left: 30px;
+            top: 10px;
+            left: 37px;
         }
         
         .boneco-comercio .corpo {
-            width: 16px;
-            height: 30px;
+            width: 20px;
+            height: 35px;
             background: #2a5298;
             position: absolute;
-            top: 25px;
-            left: 32px;
+            top: 35px;
+            left: 40px;
         }
         
         .boneco-comercio .braco-esquerdo {
-            width: 20px;
-            height: 6px;
+            width: 25px;
+            height: 8px;
             background: #2a5298;
             position: absolute;
-            top: 30px;
-            left: 20px;
+            top: 40px;
+            left: 25px;
             transform: rotate(30deg);
+            border-radius: 4px;
         }
         
         .boneco-comercio .braco-direito {
-            width: 25px;
-            height: 6px;
+            width: 30px;
+            height: 8px;
             background: #2a5298;
             position: absolute;
-            top: 30px;
-            left: 40px;
+            top: 40px;
+            left: 50px;
             transform: rotate(-10deg);
+            border-radius: 4px;
         }
         
         .boneco-comercio .pacote {
-            width: 20px;
-            height: 15px;
+            width: 25px;
+            height: 20px;
             background: #ffd700;
-            border: 2px solid #2a5298;
+            border: 3px solid #2a5298;
             position: absolute;
-            top: 35px;
-            left: 55px;
+            top: 45px;
+            left: 70px;
+            border-radius: 3px;
         }
         
         .boneco-comercio .loja {
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
             background: #e74c3c;
             position: absolute;
-            top: 10px;
+            top: 15px;
             left: 5px;
-            border-radius: 3px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
         
         .boneco-comercio .loja:before {
             content: "🏪";
-            font-size: 16px;
-            position: absolute;
-            top: 4px;
-            left: 5px;
+            font-size: 18px;
         }
 
         /* Ícone 3 - Bonequinho fazendo mudança */
         .icon-mudanca {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
             position: relative;
         }
         
@@ -455,219 +537,243 @@
         }
         
         .boneco-mudanca .cabeca {
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
             background: #c0392b;
             border-radius: 50%;
             position: absolute;
-            top: 5px;
-            left: 30px;
+            top: 10px;
+            left: 37px;
         }
         
         .boneco-mudanca .corpo {
-            width: 16px;
-            height: 30px;
+            width: 20px;
+            height: 35px;
             background: #c0392b;
             position: absolute;
-            top: 25px;
-            left: 32px;
+            top: 35px;
+            left: 40px;
         }
         
         .boneco-mudanca .braco-esquerdo {
-            width: 20px;
-            height: 6px;
+            width: 25px;
+            height: 8px;
             background: #c0392b;
             position: absolute;
-            top: 30px;
-            left: 20px;
+            top: 40px;
+            left: 25px;
             transform: rotate(45deg);
+            border-radius: 4px;
         }
         
         .boneco-mudanca .braco-direito {
-            width: 20px;
-            height: 6px;
+            width: 25px;
+            height: 8px;
             background: #c0392b;
             position: absolute;
-            top: 30px;
-            left: 40px;
+            top: 40px;
+            left: 50px;
             transform: rotate(-45deg);
+            border-radius: 4px;
         }
         
         .boneco-mudanca .movel {
-            width: 25px;
-            height: 20px;
+            width: 30px;
+            height: 25px;
             background: #8B4513;
-            border: 2px solid #4a2510;
+            border: 3px solid #4a2510;
             position: absolute;
-            top: 40px;
-            left: 45px;
+            top: 50px;
+            left: 55px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
         }
         
         .boneco-mudanca .movel:before {
             content: "🪑";
-            font-size: 12px;
-            position: absolute;
-            top: 0px;
-            left: 5px;
+            font-size: 14px;
         }
         
         .boneco-mudanca .caixa-mudanca {
-            width: 20px;
-            height: 15px;
+            width: 25px;
+            height: 20px;
             background: #ffd700;
-            border: 2px solid #c0392b;
+            border: 3px solid #c0392b;
             position: absolute;
-            top: 25px;
-            left: 10px;
+            top: 35px;
+            left: 15px;
+            border-radius: 3px;
         }
 
         .service-content h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 12px;
             color: #1e3c72;
         }
 
         .service-content p {
             color: #666;
-            margin-bottom: 20px;
-            font-size: 14px;
-            padding: 0 10px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .btn-whatsapp-small {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background: #25d366;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            transition: all 0.3s;
             font-weight: 500;
             width: 100%;
             text-align: center;
+            border: 2px solid transparent;
         }
 
         .btn-whatsapp-small:hover {
             background: #128C7E;
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.3);
         }
 
         /* Como funciona */
         .how-it-works {
-            padding: 60px 0;
+            padding: 80px 0;
             background: #f4f7fc;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .step-card {
             background: white;
-            padding: 30px 20px;
-            border-radius: 10px;
+            padding: 35px 25px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
         }
 
         .step-number {
             background: #1e3c72;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             font-weight: 700;
+            font-size: 20px;
         }
 
         .step-card h4 {
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: #1e3c72;
         }
 
         .step-card p {
             color: #666;
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         /* O que transportamos */
         .what-we-carry {
-            padding: 60px 0;
+            padding: 80px 0;
             background: white;
         }
 
         .carry-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .carry-item {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             background: #f8f9fa;
-            border-radius: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .carry-item:hover {
+            transform: translateY(-5px);
         }
 
         .carry-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 42px;
+            margin-bottom: 15px;
         }
 
         .carry-item h4 {
+            font-size: 18px;
             color: #1e3c72;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .carry-item p {
             color: #666;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         /* Contato */
         .contact {
-            padding: 60px 0;
+            padding: 80px 0;
             background: #f4f7fc;
         }
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
         .contact-item {
-            padding: 25px;
+            padding: 30px 25px;
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .contact-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 42px;
+            margin-bottom: 15px;
         }
 
         .contact-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: #1e3c72;
         }
 
         .contact-item p, .contact-item a {
             color: #666;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .contact-item a:hover {
@@ -678,20 +784,36 @@
         footer {
             background: #1a1a1a;
             color: white;
-            padding: 40px 0 20px;
+            padding: 60px 0 30px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-section h4 {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: #ffd700;
-            font-size: 16px;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .footer-section h4:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #ffd700;
+            margin-top: 8px;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+            font-size: 14px;
         }
 
         .footer-section ul {
@@ -699,24 +821,25 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .footer-section ul li a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-size: 14px;
         }
 
         .footer-section ul li a:hover {
             color: #ffd700;
+            padding-left: 8px;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #333;
+            padding-top: 30px;
+            border-top: 2px solid #333;
             color: #888;
             font-size: 14px;
         }
@@ -757,7 +880,7 @@
             }
 
             .hero h1 {
-                font-size: 32px;
+                font-size: 38px;
             }
 
             .hero h2 {
@@ -765,7 +888,12 @@
             }
 
             .hero-content {
-                padding: 20px;
+                padding: 30px 20px;
+            }
+
+            .cta-button {
+                font-size: 18px;
+                padding: 15px 30px;
             }
         }
     </style>
@@ -795,7 +923,7 @@
             <div class="hero-content">
                 <h1>Ale Fretes</h1>
                 <h2>Fretes Leves em Barrinha e Região</h2>
-                <p>Strada com capota de fibra • Cargas leves • Atendimento térreo<br>Você coloca, a gente transporta!</p>
+                <p>Strada com capota de fibra • Cargas leves • Atendimento térreo<br><strong>Você coloca, a gente transporta!</strong></p>
                 <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
                     <span>📱</span> Solicitar Orçamento via WhatsApp
                 </a>
@@ -844,10 +972,8 @@
                         <li><span>✅</span> Ideal para cargas leves e secas</li>
                         <li><span>✅</span> Capota de fibra - proteção contra chuva e sol</li>
                         <li><span>✅</span> Veículo preservado e cuidado</li>
-                        <li><span>⚠️</span> Não realizamos subidas em apartamentos/sobrados</li>
-                        <li><span>⚠️</span> A carga deve ser colocada pelo contratante (térreo)</li>
+                        <li><span>📍</span> Atendimento em Barrinha e região</li>
                     </ul>
-                    <p style="margin-top: 20px; font-weight: 500;">"Você coloca, a gente transporta!"</p>
                 </div>
                 <div class="about-image">
                     <img src="carro1.png" alt="Fiat Strada Ale Fretes">
@@ -913,7 +1039,7 @@
                     </div>
                     <div class="service-content">
                         <h4>Pequenas Mudanças</h4>
-                        <p>Mudanças residenciais pequenas - tudo no térreo.</p>
+                        <p>Mudanças residenciais pequenas - tudo planejado com você.</p>
                         <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pequena%20mudança." class="btn-whatsapp-small" target="_blank">
                             📱 Solicitar via WhatsApp
                         </a>
@@ -973,8 +1099,8 @@
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h4>Você Coloca</h4>
-                    <p>A carga deve estar no térreo para colocarmos no veículo</p>
+                    <h4>Combine os Detalhes</h4>
+                    <p>Ajustamos horário e local para retirada</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
@@ -1005,54 +1131,4 @@
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h4>E-mail</h4>
-                    <p><a href="mailto:contato@alefretes.com.br">contato@alefretes.com.br</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
-                    <h4>Horário</h4>
-                    <p>Seg a Sex: 8h às 18h<br>Sáb: 8h às 12h</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Ale Fretes</h4>
-                    <p>Fretes leves em Barrinha e região com Fiat Strada capotada. Atendimento rápido e personalizado.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#diferenciais">Diferenciais</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20caixas%20e%20encomendas." target="_blank">Caixas e Encomendas</a></li>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20entregas%20de%20comércio." target="_blank">Entregas de Comércio</a></li>
-                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20pequena%20mudança." target="_blank">Pequenas Mudanças</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <ul>
-                        <li><a href="https://wa.me/551698369275" target="_blank">WhatsApp</a></li>
-                        <li><a href="#" target="_blank">Facebook</a></li>
-                        <li><a href="#" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 Ale Fretes. Todos os direitos reservados. | Barrinha/SP</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                    <p><a href="mailto:contato@alefretes.com.br">contato@alefretes.com.br</a></p
