@@ -6,86 +6,118 @@
 <title>ALE FRETES</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f9;
-color:#333;
 }
 
-header{
-background:linear-gradient(90deg,#004aad,#007bff);
+body{
+background:#0f172a;
 color:white;
+}
+
+.hero{
+background:url('carro1.jpg') center/cover no-repeat;
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:40px 20px;
+position:relative;
 }
 
-header img{
-width:150px;
-margin-bottom:10px;
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
 }
 
-header h1{
-margin:10px 0;
-font-size:36px;
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero img{
+width:250px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:50px;
+letter-spacing:2px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:20px;
+color:#ddd;
+}
+
+.botao{
+margin-top:30px;
+display:inline-block;
+padding:18px 40px;
+background:#25d366;
+color:white;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+border-radius:8px;
+transition:0.3s;
+}
+
+.botao:hover{
+background:#1ebe5d;
 }
 
 section{
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 h2{
-color:#004aad;
-margin-bottom:30px;
+font-size:35px;
+margin-bottom:40px;
+color:#25d366;
 }
 
 .servicos{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:40px;
 }
 
 .card{
-background:white;
-width:280px;
-padding:25px;
+background:#1e293b;
+width:300px;
+padding:30px;
 border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px);
+background:#334155;
 }
 
-.galeria{
-display:flex;
-justify-content:center;
+.card h3{
+margin-bottom:15px;
+color:#25d366;
 }
 
-.galeria img{
-width:350px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.botao{
-display:inline-block;
-padding:15px 35px;
-background:#25d366;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-size:18px;
-font-weight:bold;
-transition:0.3s;
-margin-top:40px;
-}
-
-.botao:hover{
-background:#1ebe5d;
+footer{
+background:black;
+padding:30px;
+text-align:center;
+color:#aaa;
 }
 
 .whatsapp-float{
@@ -94,28 +126,23 @@ bottom:20px;
 right:20px;
 background:#25d366;
 color:white;
-padding:15px 18px;
+padding:18px 20px;
 border-radius:50%;
-font-size:22px;
+font-size:24px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
 @media(max-width:768px){
+.hero h1{
+font-size:32px;
+}
+.hero img{
+width:180px;
+}
 .servicos{
 flex-direction:column;
 align-items:center;
-}
-.galeria img{
-width:90%;
 }
 }
 </style>
@@ -123,43 +150,35 @@ width:90%;
 
 <body>
 
-<header>
+<div class="hero">
+<div class="hero-content">
 <img src="logo.png" alt="Logo ALE FRETES">
-<h1>🚛 ALE FRETES</h1>
-<p>Pequenas mudanças • Transporte de mercadorias • Encomendas</p>
-</header>
+<h1>ALE FRETES</h1>
+<p>Pequenas mudanças • Mercadorias • Encomendas</p>
+<a href="https://wa.me/5516988369275" class="botao">
+Solicitar Orçamento no WhatsApp
+</a>
+</div>
+</div>
 
 <section>
 <h2>Nossos Serviços</h2>
 
 <div class="servicos">
 <div class="card">
-<h3>🏠 Pequenas Mudanças</h3>
-<p>Transporte seguro de móveis, eletrodomésticos e caixas com responsabilidade.</p>
+<h3>Pequenas Mudanças</h3>
+<p>Transporte seguro de móveis e eletrodomésticos.</p>
 </div>
 
 <div class="card">
-<h3>📦 Transporte de Mercadorias</h3>
-<p>Entrega rápida e segura para comércios e empresas.</p>
+<h3>Transporte de Mercadorias</h3>
+<p>Entrega rápida e responsável para empresas.</p>
 </div>
 
 <div class="card">
-<h3>🚚 Entrega de Encomendas</h3>
+<h3>Entrega de Encomendas</h3>
 <p>Coleta e entrega ágil na cidade e região.</p>
 </div>
-</div>
-
-<a href="https://wa.me/5516988369275" class="botao">
-📲 Solicitar Orçamento no WhatsApp
-</a>
-
-</section>
-
-<section>
-<h2>Nosso Veículo</h2>
-
-<div class="galeria">
-<img src="carro1.jpg" alt="Veículo ALE FRETES">
 </div>
 
 </section>
