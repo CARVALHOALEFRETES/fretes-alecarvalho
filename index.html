@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporte & Fretes | Logística Profissional</title>
+    <title>Carvalho Ale Fretes | Transporte em Barrinha e Região</title>
     <style>
         * {
             margin: 0;
@@ -65,17 +65,19 @@
         }
 
         .btn-contato {
-            background: #ffd700;
-            color: #1e3c72;
+            background: #25d366;
+            color: white;
             padding: 10px 20px;
             border-radius: 5px;
             font-weight: 600;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-contato:hover {
-            background: #ffed4a;
-            color: #1e3c72;
+            background: #128C7E;
         }
 
         /* Hero Section */
@@ -107,20 +109,23 @@
         }
 
         .cta-button {
-            background: #ffd700;
-            color: #1e3c72;
+            background: #25d366;
+            color: white;
             padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 18px;
             transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            background: #128C7E;
         }
 
         /* Features */
@@ -236,70 +241,59 @@
             background: #2a5298;
         }
 
-        /* Cotação */
+        /* Cotação WhatsApp */
         .quote {
             padding: 80px 0;
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
         }
 
-        .quote-form {
-            max-width: 600px;
+        .whatsapp-container {
+            max-width: 800px;
             margin: 0 auto;
+            text-align: center;
             background: white;
-            padding: 40px;
+            padding: 50px;
             border-radius: 10px;
             color: #333;
         }
 
-        .form-group {
+        .whatsapp-icon {
+            font-size: 80px;
+            color: #25d366;
             margin-bottom: 20px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #1e3c72;
-            outline: none;
-        }
-
-        .form-group textarea {
-            height: 100px;
-            resize: vertical;
-        }
-
-        .btn-enviar {
-            background: #ffd700;
+        .whatsapp-container h3 {
+            font-size: 32px;
             color: #1e3c72;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
+            margin-bottom: 20px;
         }
 
-        .btn-enviar:hover {
-            background: #ffed4a;
+        .whatsapp-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            background: #128C7E;
         }
 
         /* Contato */
@@ -316,7 +310,7 @@
         }
 
         .contact-item {
-            padding: 20px;
+            padding: 30px;
             background: #f8f9fa;
             border-radius: 10px;
             transition: transform 0.3s;
@@ -336,6 +330,22 @@
             font-size: 20px;
             margin-bottom: 10px;
             color: #1e3c72;
+        }
+
+        .contact-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #1e3c72;
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -412,6 +422,11 @@
             .logo img {
                 height: 50px;
             }
+
+            .btn-whatsapp {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
         }
 
         /* Animações */
@@ -435,33 +450,37 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="logo.png" alt="Logo RápidoFrete - Transporte e Logística">
+                <img src="logo.png" alt="Logo Carvalho Ale Fretes">
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#features">Diferenciais</a></li>
-                    <li><a href="#cotacao">Cotação</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <a href="#cotacao" class="btn-contato">Solicitar Cotação</a>
+            <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="btn-contato" target="_blank">
+                <span>📱</span> WhatsApp
+            </a>
         </div>
     </header>
 
     <section id="home" class="hero">
         <div class="container hero-content">
+            <h2>Carvalho Ale Fretes</h2>
             <h2>Transporte Rápido e Seguro para sua Mercadoria</h2>
-            <p>Soluções logísticas completas para fretes em todo território nacional. Entregas rápidas, seguras e com o melhor preço do mercado.</p>
-            <a href="#cotacao" class="cta-button">Solicitar Cotação Grátis</a>
+            <p>Soluções logísticas completas para fretes em Barrinha e toda região. Entregas rápidas, seguras e com o melhor preço do mercado.</p>
+            <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
+                <span>📱</span> Solicitar Cotação via WhatsApp
+            </a>
         </div>
     </section>
 
     <section id="features" class="features">
         <div class="container">
             <div class="section-title">
-                <h3>Por que escolher a RápidoFrete?</h3>
+                <h3>Por que escolher a Carvalho Ale Fretes?</h3>
                 <p>Oferecemos o que há de melhor em transporte de cargas</p>
             </div>
             <div class="features-grid">
@@ -482,8 +501,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📍</div>
-                    <h4>Rastreamento</h4>
-                    <p>Acompanhe sua carga em tempo real pelo nosso sistema.</p>
+                    <h4>Atendimento Regional</h4>
+                    <p>Especialistas em fretes em Barrinha e toda região.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
@@ -492,8 +511,8 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
-                    <h4>Suporte 24h</h4>
-                    <p>Atendimento personalizado a qualquer hora do dia.</p>
+                    <h4>Suporte via WhatsApp</h4>
+                    <p>Atendimento personalizado e rápido pelo WhatsApp.</p>
                 </div>
             </div>
         </div>
@@ -511,80 +530,28 @@
                     <div class="service-content">
                         <h4>Carga Fracionada</h4>
                         <p>Ideal para pequenas e médias cargas. Compartilhe o espaço e pague apenas pelo que usar.</p>
-                        <div class="service-price">A partir de R$ 150</div>
-                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                        <div class="service-price">Consulte preço</div>
+                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20fracionada." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
                     </div>
                 </div>
                 <div class="service-item">
                     <div class="service-image" style="background-image: url('carro1.png')"></div>
                     <div class="service-content">
                         <h4>Carga Completa</h4>
-                        <p>Para grandes volumes, temos caminhões dedicados exclusivamente para sua carga.</p>
-                        <div class="service-price">A partir de R$ 1.200</div>
-                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                        <p>Para grandes volumes, temos veículos dedicados exclusivamente para sua carga.</p>
+                        <div class="service-price">Consulte preço</div>
+                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20completa." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
                     </div>
                 </div>
                 <div class="service-item">
                     <div class="service-image" style="background-image: url('carro1.png')"></div>
                     <div class="service-content">
-                        <h4>Cargas Especiais</h4>
-                        <p>Transporte de cargas sensíveis, perigosas ou que necessitam de cuidados especiais.</p>
-                        <div class="service-price">Sob consulta</div>
-                        <a href="#cotacao" class="btn-saiba-mais">Saiba mais</a>
+                        <h4>Mudanças</h4>
+                        <p>Transporte seguro para sua mudança residencial ou comercial.</p>
+                        <div class="service-price">Consulte preço</div>
+                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20mudanças." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cotacao" class="quote">
-        <div class="container">
-            <div class="section-title" style="color: white;">
-                <h3 style="color: white;">Solicite sua Cotação</h3>
-                <p style="color: #ccc;">Preencha o formulário e receba o melhor preço para seu frete</p>
-            </div>
-            <div class="quote-form">
-                <form>
-                    <div class="form-group">
-                        <label>Nome completo</label>
-                        <input type="text" placeholder="Digite seu nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label>E-mail</label>
-                        <input type="email" placeholder="Digite seu e-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone</label>
-                        <input type="tel" placeholder="(00) 00000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Tipo de carga</label>
-                        <select required>
-                            <option value="">Selecione...</option>
-                            <option value="fracionada">Carga Fracionada</option>
-                            <option value="completa">Carga Completa</option>
-                            <option value="especial">Carga Especial</option>
-                            <option value="documentos">Documentos/Encomendas</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Origem</label>
-                        <input type="text" placeholder="Cidade de origem" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Destino</label>
-                        <input type="text" placeholder="Cidade de destino" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Peso aproximado (kg)</label>
-                        <input type="number" placeholder="Ex: 500" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Descrição da carga</label>
-                        <textarea placeholder="Descreva sua carga e necessidades especiais..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-enviar">Solicitar Cotação</button>
-                </form>
             </div>
         </div>
     </section>
@@ -598,18 +565,18 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
-                    <h4>Endereço</h4>
-                    <p>Av. das Empresas, 1000<br>Centro Empresarial<br>São Paulo - SP</p>
+                    <h4>Localização</h4>
+                    <p>Barrinha/SP<br>Atendimento em toda região</p>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <h4>Telefone</h4>
-                    <p>(11) 3333-4444<br>(11) 99999-8888</p>
+                    <div class="contact-icon">📱</div>
+                    <h4>WhatsApp</h4>
+                    <p><a href="https://wa.me/5516988369275" target="_blank">(16) 98836-9275</a><br>Atendimento rápido e personalizado</p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h4>E-mail</h4>
-                    <p>contato@rapidofrete.com.br<br>comercial@rapidofrete.com.br</p>
+                    <p><a href="mailto:carvalhoalefretes@gmail.com">carvalhoalefretes@gmail.com</a><br>Envie sua solicitação</p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">⏰</div>
@@ -624,8 +591,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>RápidoFrete</h4>
-                    <p>Sua solução completa em transporte de cargas e fretes em todo Brasil. Compromisso com qualidade e pontualidade.</p>
+                    <h4>Carvalho Ale Fretes</h4>
+                    <p>Sua solução completa em transporte de cargas e fretes em Barrinha e região. Compromisso com qualidade e pontualidade.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Links Rápidos</h4>
@@ -633,32 +600,28 @@
                         <li><a href="#home">Início</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#features">Diferenciais</a></li>
-                        <li><a href="#cotacao">Cotação</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="#">Carga Fracionada</a></li>
-                        <li><a href="#">Carga Completa</a></li>
-                        <li><a href="#">Cargas Especiais</a></li>
-                        <li><a href="#">Documentos</a></li>
-                        <li><a href="#">Mudanças</a></li>
+                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20fracionada." target="_blank">Carga Fracionada</a></li>
+                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20completa." target="_blank">Carga Completa</a></li>
+                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20mudanças." target="_blank">Mudanças</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Redes Sociais</h4>
                     <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">WhatsApp</a></li>
+                        <li><a href="https://wa.me/5516988369275" target="_blank">WhatsApp</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                        <li><a href="#" target="_blank">Instagram</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 RápidoFrete. Todos os direitos reservados. | Desenvolvido por Sua Empresa</p>
+                <p>&copy; 2024 Carvalho Ale Fretes. Todos os direitos reservados. | Barrinha/SP</p>
             </div>
         </div>
     </footer>
