@@ -251,7 +251,7 @@
             margin-bottom: 15px;
         }
 
-        /* Serviços */
+        /* Serviços com ícones personalizados */
         .services {
             padding: 60px 0;
             background: white;
@@ -266,18 +266,259 @@
         .service-item {
             background: #f8f9fa;
             border-radius: 10px;
-            overflow: hidden;
+            padding: 30px 20px;
+            text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        .service-image {
-            height: 160px;
-            background-size: cover;
-            background-position: center;
+        .service-item:hover {
+            transform: translateY(-5px);
         }
 
-        .service-content {
-            padding: 20px;
+        /* Ícone 1 - Bonequinho carregando caixa */
+        .icon-caixa {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .boneco-caixa {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .boneco-caixa .cabeca {
+            width: 20px;
+            height: 20px;
+            background: #1e3c72;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 30px;
+        }
+        
+        .boneco-caixa .corpo {
+            width: 16px;
+            height: 30px;
+            background: #1e3c72;
+            position: absolute;
+            top: 25px;
+            left: 32px;
+        }
+        
+        .boneco-caixa .braco-esquerdo {
+            width: 20px;
+            height: 6px;
+            background: #1e3c72;
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            transform: rotate(20deg);
+        }
+        
+        .boneco-caixa .braco-direito {
+            width: 20px;
+            height: 6px;
+            background: #1e3c72;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            transform: rotate(-20deg);
+        }
+        
+        .boneco-caixa .caixa {
+            width: 30px;
+            height: 25px;
+            background: #ffd700;
+            border: 2px solid #1e3c72;
+            position: absolute;
+            top: 35px;
+            left: 45px;
+        }
+        
+        .boneco-caixa .caixa:before {
+            content: "";
+            width: 20px;
+            height: 2px;
+            background: #1e3c72;
+            position: absolute;
+            top: 8px;
+            left: 3px;
+        }
+        
+        .boneco-caixa .caixa:after {
+            content: "";
+            width: 2px;
+            height: 15px;
+            background: #1e3c72;
+            position: absolute;
+            top: 5px;
+            left: 12px;
+        }
+
+        /* Ícone 2 - Boneco entregando no comércio */
+        .icon-comercio {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .boneco-comercio {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .boneco-comercio .cabeca {
+            width: 20px;
+            height: 20px;
+            background: #2a5298;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 30px;
+        }
+        
+        .boneco-comercio .corpo {
+            width: 16px;
+            height: 30px;
+            background: #2a5298;
+            position: absolute;
+            top: 25px;
+            left: 32px;
+        }
+        
+        .boneco-comercio .braco-esquerdo {
+            width: 20px;
+            height: 6px;
+            background: #2a5298;
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            transform: rotate(30deg);
+        }
+        
+        .boneco-comercio .braco-direito {
+            width: 25px;
+            height: 6px;
+            background: #2a5298;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            transform: rotate(-10deg);
+        }
+        
+        .boneco-comercio .pacote {
+            width: 20px;
+            height: 15px;
+            background: #ffd700;
+            border: 2px solid #2a5298;
+            position: absolute;
+            top: 35px;
+            left: 55px;
+        }
+        
+        .boneco-comercio .loja {
+            width: 25px;
+            height: 25px;
+            background: #e74c3c;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            border-radius: 3px;
+        }
+        
+        .boneco-comercio .loja:before {
+            content: "🏪";
+            font-size: 16px;
+            position: absolute;
+            top: 4px;
+            left: 5px;
+        }
+
+        /* Ícone 3 - Bonequinho fazendo mudança */
+        .icon-mudanca {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .boneco-mudanca {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .boneco-mudanca .cabeca {
+            width: 20px;
+            height: 20px;
+            background: #c0392b;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 30px;
+        }
+        
+        .boneco-mudanca .corpo {
+            width: 16px;
+            height: 30px;
+            background: #c0392b;
+            position: absolute;
+            top: 25px;
+            left: 32px;
+        }
+        
+        .boneco-mudanca .braco-esquerdo {
+            width: 20px;
+            height: 6px;
+            background: #c0392b;
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            transform: rotate(45deg);
+        }
+        
+        .boneco-mudanca .braco-direito {
+            width: 20px;
+            height: 6px;
+            background: #c0392b;
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            transform: rotate(-45deg);
+        }
+        
+        .boneco-mudanca .movel {
+            width: 25px;
+            height: 20px;
+            background: #8B4513;
+            border: 2px solid #4a2510;
+            position: absolute;
+            top: 40px;
+            left: 45px;
+        }
+        
+        .boneco-mudanca .movel:before {
+            content: "🪑";
+            font-size: 12px;
+            position: absolute;
+            top: 0px;
+            left: 5px;
+        }
+        
+        .boneco-mudanca .caixa-mudanca {
+            width: 20px;
+            height: 15px;
+            background: #ffd700;
+            border: 2px solid #c0392b;
+            position: absolute;
+            top: 25px;
+            left: 10px;
         }
 
         .service-content h4 {
@@ -288,8 +529,9 @@
 
         .service-content p {
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 14px;
+            padding: 0 10px;
         }
 
         .btn-whatsapp-small {
@@ -622,7 +864,15 @@
             </div>
             <div class="services-grid">
                 <div class="service-item">
-                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="icon-caixa">
+                        <div class="boneco-caixa">
+                            <div class="cabeca"></div>
+                            <div class="corpo"></div>
+                            <div class="braco-esquerdo"></div>
+                            <div class="braco-direito"></div>
+                            <div class="caixa"></div>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h4>Caixas e Encomendas</h4>
                         <p>Transporte de caixas, pacotes e encomendas para toda região.</p>
@@ -632,7 +882,16 @@
                     </div>
                 </div>
                 <div class="service-item">
-                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="icon-comercio">
+                        <div class="boneco-comercio">
+                            <div class="cabeca"></div>
+                            <div class="corpo"></div>
+                            <div class="braco-esquerdo"></div>
+                            <div class="braco-direito"></div>
+                            <div class="loja"></div>
+                            <div class="pacote"></div>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h4>Entregas de Comércio</h4>
                         <p>Para lojas que precisam entregar produtos em Barrinha e região.</p>
@@ -642,7 +901,16 @@
                     </div>
                 </div>
                 <div class="service-item">
-                    <div class="service-image" style="background-image: url('carro1.png')"></div>
+                    <div class="icon-mudanca">
+                        <div class="boneco-mudanca">
+                            <div class="cabeca"></div>
+                            <div class="corpo"></div>
+                            <div class="braco-esquerdo"></div>
+                            <div class="braco-direito"></div>
+                            <div class="caixa-mudanca"></div>
+                            <div class="movel"></div>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h4>Pequenas Mudanças</h4>
                         <p>Mudanças residenciais pequenas - tudo no térreo.</p>
