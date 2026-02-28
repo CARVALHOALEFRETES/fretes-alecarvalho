@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carvalho Ale Fretes | Transporte em Barrinha e Região</title>
+    <title>Ale Fretes | Transporte em Barrinha e Região</title>
     <style>
         * {
             margin: 0;
@@ -80,9 +80,9 @@
             background: #128C7E;
         }
 
-        /* Hero Section */
+        /* Hero Section - Agora mais sutil para não competir com a imagem */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('carro1.png');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('carro1.png');
             background-size: cover;
             background-position: center;
             height: 600px;
@@ -95,10 +95,13 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            background: rgba(0,0,0,0.5);
+            padding: 40px;
+            border-radius: 10px;
         }
 
         .hero h2 {
-            font-size: 48px;
+            font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
@@ -220,79 +223,20 @@
             color: #1e3c72;
         }
 
-        .service-price {
-            font-size: 24px;
-            color: #2a5298;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-
         .btn-saiba-mais {
             display: inline-block;
-            padding: 10px 25px;
-            background: #1e3c72;
+            padding: 12px 25px;
+            background: #25d366;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
+            font-weight: 500;
+            width: 100%;
+            text-align: center;
         }
 
         .btn-saiba-mais:hover {
-            background: #2a5298;
-        }
-
-        /* Cotação WhatsApp */
-        .quote {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-        }
-
-        .whatsapp-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            background: white;
-            padding: 50px;
-            border-radius: 10px;
-            color: #333;
-        }
-
-        .whatsapp-icon {
-            font-size: 80px;
-            color: #25d366;
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-container h3 {
-            font-size: 32px;
-            color: #1e3c72;
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-container p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: white;
-            padding: 20px 50px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 24px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             background: #128C7E;
         }
 
@@ -408,11 +352,15 @@
             }
 
             .hero h2 {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .hero p {
-                font-size: 18px;
+                font-size: 16px;
+            }
+
+            .hero-content {
+                padding: 20px;
             }
 
             .section-title h3 {
@@ -421,11 +369,6 @@
 
             .logo img {
                 height: 50px;
-            }
-
-            .btn-whatsapp {
-                font-size: 18px;
-                padding: 15px 30px;
             }
         }
 
@@ -450,7 +393,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="logo.png" alt="Logo Carvalho Ale Fretes">
+                <img src="logo.png" alt="Logo Ale Fretes">
             </div>
             <nav>
                 <ul>
@@ -460,7 +403,7 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="btn-contato" target="_blank">
+            <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="btn-contato" target="_blank">
                 <span>📱</span> WhatsApp
             </a>
         </div>
@@ -468,10 +411,9 @@
 
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h2>Carvalho Ale Fretes</h2>
             <h2>Transporte Rápido e Seguro para sua Mercadoria</h2>
             <p>Soluções logísticas completas para fretes em Barrinha e toda região. Entregas rápidas, seguras e com o melhor preço do mercado.</p>
-            <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
+            <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20frete." class="cta-button" target="_blank">
                 <span>📱</span> Solicitar Cotação via WhatsApp
             </a>
         </div>
@@ -480,8 +422,8 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-title">
-                <h3>Por que escolher a Carvalho Ale Fretes?</h3>
-                <p>Oferecemos o que há de melhor em transporte de cargas</p>
+                <h3>Nossos Diferenciais</h3>
+                <p>Por que escolher a Ale Fretes</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -495,19 +437,14 @@
                     <p>Compromisso com prazos e entregas no tempo combinado.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h4>Seguro de Carga</h4>
-                    <p>Sua mercadoria protegida do início ao fim do trajeto.</p>
+                    <div class="feature-icon">💰</div>
+                    <h4>Melhor Preço</h4>
+                    <p>Condições especiais e preços competitivos no mercado.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📍</div>
                     <h4>Atendimento Regional</h4>
                     <p>Especialistas em fretes em Barrinha e toda região.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h4>Melhor Preço</h4>
-                    <p>Condições especiais e preços competitivos no mercado.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
@@ -522,7 +459,7 @@
         <div class="container">
             <div class="section-title">
                 <h3>Nossos Serviços</h3>
-                <p>Soluções personalizadas para cada tipo de carga</p>
+                <p>Solicite seu orçamento pelo WhatsApp</p>
             </div>
             <div class="services-grid">
                 <div class="service-item">
@@ -530,8 +467,9 @@
                     <div class="service-content">
                         <h4>Carga Fracionada</h4>
                         <p>Ideal para pequenas e médias cargas. Compartilhe o espaço e pague apenas pelo que usar.</p>
-                        <div class="service-price">Consulte preço</div>
-                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20fracionada." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20fracionada." class="btn-saiba-mais" target="_blank">
+                            📱 Solicitar via WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -539,8 +477,9 @@
                     <div class="service-content">
                         <h4>Carga Completa</h4>
                         <p>Para grandes volumes, temos veículos dedicados exclusivamente para sua carga.</p>
-                        <div class="service-price">Consulte preço</div>
-                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20completa." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20completa." class="btn-saiba-mais" target="_blank">
+                            📱 Solicitar via WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -548,8 +487,9 @@
                     <div class="service-content">
                         <h4>Mudanças</h4>
                         <p>Transporte seguro para sua mudança residencial ou comercial.</p>
-                        <div class="service-price">Consulte preço</div>
-                        <a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20mudanças." class="btn-saiba-mais" target="_blank">Solicitar via WhatsApp</a>
+                        <a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20mudança." class="btn-saiba-mais" target="_blank">
+                            📱 Solicitar via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -571,12 +511,12 @@
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <h4>WhatsApp</h4>
-                    <p><a href="https://wa.me/5516988369275" target="_blank">(16) 98836-9275</a><br>Atendimento rápido e personalizado</p>
+                    <p><a href="https://wa.me/551698369275" target="_blank">(16) 98369-275</a><br>Atendimento rápido via WhatsApp</p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <h4>E-mail</h4>
-                    <p><a href="mailto:carvalhoalefretes@gmail.com">carvalhoalefretes@gmail.com</a><br>Envie sua solicitação</p>
+                    <p><a href="mailto:contato@alefretes.com.br">contato@alefretes.com.br</a><br>Envie sua solicitação</p>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">⏰</div>
@@ -591,7 +531,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Carvalho Ale Fretes</h4>
+                    <h4>Ale Fretes</h4>
                     <p>Sua solução completa em transporte de cargas e fretes em Barrinha e região. Compromisso com qualidade e pontualidade.</p>
                 </div>
                 <div class="footer-section">
@@ -606,22 +546,22 @@
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20fracionada." target="_blank">Carga Fracionada</a></li>
-                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20carga%20completa." target="_blank">Carga Completa</a></li>
-                        <li><a href="https://wa.me/5516988369275?text=Olá!%20Gostaria%20de%20informações%20sobre%20mudanças." target="_blank">Mudanças</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20fracionada." target="_blank">Carga Fracionada</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20carga%20completa." target="_blank">Carga Completa</a></li>
+                        <li><a href="https://wa.me/551698369275?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20mudança." target="_blank">Mudanças</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Redes Sociais</h4>
                     <ul>
-                        <li><a href="https://wa.me/5516988369275" target="_blank">WhatsApp</a></li>
+                        <li><a href="https://wa.me/551698369275" target="_blank">WhatsApp</a></li>
                         <li><a href="#" target="_blank">Facebook</a></li>
                         <li><a href="#" target="_blank">Instagram</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Carvalho Ale Fretes. Todos os direitos reservados. | Barrinha/SP</p>
+                <p>&copy; 2024 Ale Fretes. Todos os direitos reservados. | Barrinha/SP</p>
             </div>
         </div>
     </footer>
